@@ -24,5 +24,8 @@ public abstract class BakeryProduct {
         dough.start();
         System.out.printf("The dough is ready to cook: %s%n", dough.getIsAvailable());
         System.out.println(dough.getCostPerKilo());
+        dough.stop();
+        System.out.printf("The dough is ready to cook: %s%n", dough.getIsAvailable());
+        System.out.println(dough.getCostPerKilo());
     }
 }

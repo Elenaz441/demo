@@ -13,12 +13,12 @@ public class DoughConfig {
     @Bean
     @Scope(value = "prototype")
     public Dough yeastDough() {
-        return  new YeastDough();
+        return new YeastDough();
     }
 
     @Bean
     @Scope(value = "prototype")
     public Dough puffDough() {
-        return  new PuffDough();
+        return new PuffDough();
     }
 }
