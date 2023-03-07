@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 import static lombok.AccessLevel.PROTECTED;
 
@@ -24,6 +25,10 @@ public abstract class BakeryProduct {
         dough.start();
         System.out.printf("The dough is ready to cook: %s%n", dough.getIsAvailable());
         System.out.println(dough.getCostPerKilo());
+    }
+
+    @PreDestroy
+    public void preDestroy() {
         dough.stop();
         System.out.printf("The dough is ready to cook: %s%n", dough.getIsAvailable());
         System.out.println(dough.getCostPerKilo());

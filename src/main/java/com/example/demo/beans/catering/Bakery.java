@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.List;
 
 @Service
@@ -26,5 +27,10 @@ public class Bakery {
         availableProducts.forEach(
                 c -> System.out.printf("Bakery Product %s in bakery %n", c.hashCode())
         );
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        System.out.println("Bakery is closed!");
     }
 }

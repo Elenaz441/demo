@@ -20,11 +20,11 @@ public abstract class Dough {
 
     public void start() {
         isAvailable = true;
-        System.out.println("Ready to cook!");
+        System.out.print("Ready to cook! ");
     }
 
     public void stop() {
         isAvailable = false;
-        System.out.println("Dough is over!");
+        System.out.print("Dough is over! ");
     }
 }
