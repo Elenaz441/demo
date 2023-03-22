@@ -17,6 +17,8 @@ import org.springframework.stereotype.Component;
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class ProductFactory {
 
+    InfoRepository infoRepository;
+
     public ProductResponse createProductResponseFrom(Product product) {
         return new ProductResponse(
                 product.getId(),
@@ -27,6 +29,7 @@ public class ProductFactory {
 
     public ProductContext createProductContextFrom(CreateProductRequest request) {
         Info info = Info.createInfoFrom(new InfoContext(request.getInfo().getDate()));
+        info = infoRepository.save(info);
         return new ProductContext(
                 request.getPrice(),
                 info
