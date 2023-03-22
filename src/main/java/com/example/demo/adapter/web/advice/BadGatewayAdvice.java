@@ -10,7 +10,6 @@ import static org.springframework.http.HttpStatus.BAD_GATEWAY;
 import static org.springframework.http.ResponseEntity.status;
 
 @ApiAdvice
-@RequiredArgsConstructor
 public class BadGatewayAdvice {
 
     @ExceptionHandler({BadGatewayException.class})

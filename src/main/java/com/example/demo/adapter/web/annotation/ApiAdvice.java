@@ -10,6 +10,6 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Order(Ordered.HIGHEST_PRECEDENCE)
-@RestControllerAdvice(basePackages = "com.example.demo.adapter.wed")
+@RestControllerAdvice(basePackages = "com.example.demo.adapter.web")
 public @interface ApiAdvice {
 }
