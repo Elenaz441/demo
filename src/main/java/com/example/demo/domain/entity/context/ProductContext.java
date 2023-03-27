@@ -4,9 +4,12 @@ import com.example.demo.domain.entity.Info;
 import lombok.Value;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Value
 public class ProductContext {
     BigDecimal price;
-    Info info;
+    String description;
+//    Info info;
+    Date productionDate;
 }

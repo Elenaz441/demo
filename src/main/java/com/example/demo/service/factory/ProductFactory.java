@@ -23,23 +23,25 @@ public class ProductFactory {
         return new ProductResponse(
                 product.getId(),
                 product.getPrice(),
-                createInfo(product.getInfo())
+                product.getDescription(),
+                product.getProductionDate()
         );
     }
 
     public ProductContext createProductContextFrom(CreateProductRequest request) {
-        Info info = Info.createInfoFrom(new InfoContext(request.getInfo().getDate()));
-        info = infoRepository.save(info);
+//        Info info = Info.createInfoFrom(new InfoContext(request.getInfo().getDate()));
+//        info = infoRepository.save(info);
         return new ProductContext(
                 request.getPrice(),
-                info
+                request.getDescription(),
+                request.getProductionDate()
         );
     }
 
-    private ProductResponse.Info createInfo(Info info) {
-        return new ProductResponse.Info(
-                info.getId(),
-                info.getDate()
-        );
-    }
+//    private ProductResponse.Info createInfo(Info info) {
+//        return new ProductResponse.Info(
+//                info.getId(),
+//                info.getDate()
+//        );
+//    }
 }
