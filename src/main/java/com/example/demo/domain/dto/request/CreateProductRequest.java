@@ -1,19 +1,19 @@
 package com.example.demo.domain.dto.request;
 
-import com.example.demo.domain.entity.Info;
+import com.example.demo.adapter.web.annotation.DateConstraint;
+import com.example.demo.adapter.web.annotation.DescriptionConstraint;
 import lombok.Value;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.PastOrPresent;
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Value
 public class CreateProductRequest {
-    @Min(value = 0, message = "Product must have a price more than zero")
+    @Min(0)
     BigDecimal price;
+    @DescriptionConstraint
     String description;
-//    @PastOrPresent()
-//    Info info;
+    @DateConstraint
     Date productionDate;
 }

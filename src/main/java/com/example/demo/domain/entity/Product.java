@@ -17,8 +17,6 @@ public class Product extends BaseDomainEntity<Long> {
     @DescriptionConstraint
     String description;
     Date productionDate;
-//    @NonNull
-//    Info info;
 
     public static Product createProductFrom(ProductContext context) {
         return new Product(

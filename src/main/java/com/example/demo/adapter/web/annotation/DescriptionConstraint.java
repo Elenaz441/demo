@@ -1,5 +1,7 @@
 package com.example.demo.adapter.web.annotation;
 
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 import javax.validation.Payload;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -12,10 +14,11 @@ import static java.lang.annotation.ElementType.FIELD;
 @Size(min = 10, max = 10000)
 @Target({ FIELD })
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = { })
+@Constraint(validatedBy = MyDescriptionValidator.class)
 @Documented
 public @interface DescriptionConstraint {
-    String message() default "Please, enter correct description (10-10000 symbols)";
+    String message() default "Пожалуйста, введите корректное описание. Размер описания должен находиться в диапозоне от 10 до 10000. И не забываем про котиков!!!";
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
 }
+
