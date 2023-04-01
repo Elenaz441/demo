@@ -1,7 +1,7 @@
 package com.example.demo.domain.dto.request;
 
-import com.example.demo.adapter.web.annotation.DateConstraint;
-import com.example.demo.adapter.web.annotation.DescriptionConstraint;
+import com.example.demo.web.validation.DateConstraint;
+import com.example.demo.web.validation.DescriptionConstraint;
 import lombok.Value;
 
 import javax.validation.constraints.Min;

@@ -1,4 +1,4 @@
-package com.example.demo.adapter.web.advice;
+package com.example.demo.web.validation;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.example.demo.adapter.web.annotation;
+package com.example.demo.web.validation;
 
 import javax.validation.Payload;
 import javax.validation.constraints.NotBlank;
