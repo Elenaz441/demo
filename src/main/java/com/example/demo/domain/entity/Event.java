@@ -6,9 +6,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "event")
 public class Event {
 
@@ -19,14 +17,11 @@ public class Event {
 
     String name;
 
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "work_list_id")
     WorkList workList;
 
-    public static Event createEventFrom(String name, WorkList workList) {
-        return Event.builder()
-                .name(name)
-                .workList(workList)
-                .build();
+    public Event(String event) {
+        this.name = event;
     }
 }

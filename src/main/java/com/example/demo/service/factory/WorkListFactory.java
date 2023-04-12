@@ -14,12 +14,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class WorkListFactory {
 
-    @Autowired
-    EventRepository eventRepository;
-
     public WorkListResponse createWorkListResponseFrom(WorkList workList) {
         List<String> events = new LinkedList<>();
-        eventRepository.findAllByWorkListId(workList.getId()).forEach(event -> events.add(event.getName()));
+        workList.getEvents().forEach(event -> events.add(event.getName()));
         return new WorkListResponse(
                 workList.getName(),
                 events
