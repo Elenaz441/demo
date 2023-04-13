@@ -5,33 +5,6 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="202304082338" author="ezasy" context="prod">
-        <createSequence sequenceName="hibernate_sequence" startValue="1"/>
+    <includeAll path="2023" relativeToChangelogFile="true"/>
 
-        <createTable tableName="work_list">
-            <column name="id" type="bigint">
-                <constraints primaryKey="true"/>
-            </column>
-            <column name="name" type="varchar">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-
-        <createTable tableName="event">
-            <column name="id" type="bigint">
-                <constraints primaryKey="true"/>
-            </column>
-
-            <column name="name" type="varchar">
-                <constraints nullable="false"/>
-            </column>
-
-            <column name="work_list_id" type="bigint">
-                <constraints foreignKeyName="event_work_list_fk"
-                             referencedTableName="work_list"
-                             referencedColumnNames="id"/>
-            </column>
-        </createTable>
-
-    </changeSet>
 </databaseChangeLog>

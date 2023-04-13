@@ -4,8 +4,8 @@ import com.example.demo.domain.dto.request.CreateWorkListRequest;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Getter
@@ -24,16 +24,12 @@ public class WorkList {
     String name;
 
     @OneToMany(mappedBy = "workList", cascade = CascadeType.ALL)
-    List<Event> events;
+    List<Event> events = new LinkedList<>();
 
     public static WorkList createWorkListFrom(CreateWorkListRequest request) {
-        List<Event> events = request.getEvents()
-                .stream()
-                .map(Event::new)
-                .collect(Collectors.toList());
         return WorkList.builder()
                 .name(request.getName())
-                .events(events)
+                .events(new LinkedList<>())
                 .build();
     }
 
